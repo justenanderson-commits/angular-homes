@@ -17,3 +17,6 @@ import { CommonModule } from '@angular/common';
 export class HousingLocationComponent {
 
 }
+
+// Data is passed in components with @Input properties, allowing the data to flow from the parent to child element(s)
+// An interface is a contract between us and the data. It shows the data's "shape".
