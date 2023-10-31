@@ -15,7 +15,9 @@ import { HousingLocation } from '../housing-location';
     </form>
    </section>
    <section class='results'>
-    <app-housing-location></app-housing-location>
+    <!-- ngFor is Angular's syntax for iterating over the housingLocation array -->
+    <!-- This is like passing props in React -->
+    <app-housing-location *ngFor="let housingLocation of housingLocationList" [housingLocation]="housingLocation"></app-housing-location>
    <section>
   `,
   styleUrls: ['./home.component.css']
@@ -23,6 +25,7 @@ import { HousingLocation } from '../housing-location';
 export class HomeComponent {
   // housingLocationList is a property of the home component class
   // the value is HousingLocation, its type is an array. Adding `= []` assigns it to an empty array, to which data will be later added.
+  // Had to convert the JS dummy data to JSON and change id type to number in housing-location.ts
   housingLocationList: HousingLocation[] = [
   {
     "id": 0,
