@@ -18,11 +18,13 @@ import { HousingLocation } from '../housing-location'
         {{ housingLocation.city }}, {{ housingLocation.state }}
       </p>
     </section>
+
   `,
   styleUrls: ['./housing-location.component.css'],
 })
 export class HousingLocationComponent {
   // @Input() is an input decorator, which requires the @ symbol prefix and the parens at the end
+  // Decorators are functions that return functions
   // The exclamation point is the non-null assertion operator. It tells tsc that the value won't be null or undefined
   @Input() housingLocation!: HousingLocation
 }
@@ -30,3 +32,5 @@ export class HousingLocationComponent {
 // Data is passed in components with @Input properties, allowing the data to flow from the parent to child element(s)
 // An interface is a contract between us and the data. It shows the data's "shape".
 // Property binding - ( i.e. [src]) - allows us to tell Angular that the value in quotes should be an actual value from the property class.
+
+
