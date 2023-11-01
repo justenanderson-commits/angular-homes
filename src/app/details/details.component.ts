@@ -23,3 +23,6 @@ export class DetailsComponent {
     this.housingLocationId = Number(this.route.snapshot.params["id"])
   }
 }
+
+// Learning Notes
+// Services can be used to interact with data (i.e. retrieve data from the data source)
