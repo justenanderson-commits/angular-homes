@@ -2,11 +2,14 @@ import { Component } from '@angular/core'
 import { HomeComponent } from './home/home.component'
 import { RouterModule } from '@angular/router'
 
+// Continue learning in Video 7 https://www.youtube.com/watch?v=kWbk-dOJaNQ
+
 @Component({
   standalone: true,
   selector: 'app-root',
   template: `
     <main>
+      <!-- Add an anchor tag to route back to home page here: -->
       <header class="brand-one">
         <img
           class="brand-logo"

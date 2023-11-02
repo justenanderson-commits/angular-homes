@@ -21,8 +21,8 @@ import { HousingLocation } from '../housing-location'
           <h2 class="section-heading">About this property</h2>
           <ul>
             <li>Units available: {{housingLocation?.availableUnits}}</li>
-            <li>Does this property have wifi?: {{housingLocation?.wifi}}</li>
-            <li>Does this property have laundry?: {{housingLocation?.laundry}}</li>
+            <li>This property has wifi: {{housingLocation?.wifi}}</li>
+            <li>This property have laundry: {{housingLocation?.laundry}}</li>
           </ul>
       </section>  
       <section class="listing-apply">
