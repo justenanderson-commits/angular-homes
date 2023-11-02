@@ -17,6 +17,18 @@ import { HousingLocation } from '../housing-location'
           {{ housingLocation?.city }}, {{ housingLocation?.state }}
         </p>
       </section>
+      <section class="listing-features">
+          <h2 class="section-heading">About this property</h2>
+          <ul>
+            <li>Units available: {{housingLocation?.availableUnits}}</li>
+            <li>Does this property have wifi?: {{housingLocation?.wifi}}</li>
+            <li>Does this property have laundry?: {{housingLocation?.laundry}}</li>
+          </ul>
+      </section>  
+      <section class="listing-apply">
+        <h2 class="section-heading">Apply to live here</h2>
+          <button class="primary" type="button">Apply now</button>
+      </section>
     </article>
   `,
   styleUrls: ['./details.component.css'],
