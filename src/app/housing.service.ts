@@ -5,10 +5,14 @@ import { HousingLocation } from './housing-location'
   providedIn: 'root',
 })
 export class HousingService {
-  protected housingLocationList: HousingLocation[] = []
+  url = 'http://localhost:300/locations'
+
+
   constructor() {}
-  getAllHousingLocations(): HousingLocation[] {
-    return this.housingLocationList
+
+  async getAllHousingLocations() : Promise<HousingLocation[]> {
+    const data = await fetch(this.url)
+    return await data.json() ?? []
   }
 
   getHousingLocationById(id: Number): HousingLocation | undefined {
