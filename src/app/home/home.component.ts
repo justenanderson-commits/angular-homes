@@ -16,8 +16,6 @@ import { HousingService } from '../housing.service'
       </form>
     </section>
     <section class="results">
-      <!-- ngFor is Angular's syntax for iterating over the housingLocation array -->
-      <!-- This is like passing props in React -->
       <app-housing-location
         *ngFor="let housingLocation of housingLocationList"
         [housingLocation]="housingLocation"
@@ -28,13 +26,15 @@ import { HousingService } from '../housing.service'
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent {
-  // housingLocationList is a property of the home component class
-  // the value is HousingLocation, its type is an array. Adding `= []` assigns it to an empty array, to which data will be later added.
-  // Had to convert the JS dummy data to JSON and change id type to number in housing-location.ts
   housingLocationList: HousingLocation[] = []
   housingService: HousingService = inject(HousingService)
 
   constructor() {
-    this.housingLocationList = this.housingService.getAllHousingLocations()
+    this.housingService.getAllHousingLocations().then((housingLocationList: HousingLocation[]) => {
+      this.housingLocationList = housingLocationList
+    })
   }
 }
+
+// Learning Notes:
+// ngFor is Angular's syntax for iterating over the housingLocation array
