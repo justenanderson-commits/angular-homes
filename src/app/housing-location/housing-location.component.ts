@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common'
 import { HousingLocation } from '../housing-location'
 import { RouterModule } from '@angular/router'
 
-
 @Component({
   selector: 'app-housing-location',
   standalone: true,
@@ -22,7 +21,6 @@ import { RouterModule } from '@angular/router'
       <!-- Square brackets around the routerLink directive is for property binding and it means that the right-hand side value with support dynamic values and values other than strings. -->
       <a [routerLink]="['/details', housingLocation.id]">Learn More</a>
     </section>
-
   `,
   styleUrls: ['./housing-location.component.css'],
 })
@@ -36,5 +34,3 @@ export class HousingLocationComponent {
 // Data is passed in components with @Input properties, allowing the data to flow from the parent to child element(s)
 // An interface is a contract between us and the data. It shows the data's "shape".
 // Property binding - ( i.e. [src]) - allows us to tell Angular that the value in quotes should be an actual value from the property class.
-
-

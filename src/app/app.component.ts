@@ -7,6 +7,7 @@ import { RouterModule } from '@angular/router'
   selector: 'app-root',
   template: `
     <main>
+      <!-- Add an anchor tag to route back to home page here: -->
       <header class="brand-one">
         <img
           class="brand-logo"
