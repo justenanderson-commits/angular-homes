@@ -28,7 +28,7 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms'
       </section>  
       <section class="listing-apply">
         <h2 class="section-heading">Apply to live here</h2>
-      <form [formGroup]="applyForm">
+      <form [formGroup]="applyForm" (submit)="submitApplication()" >
           <label for="first-name">First Name</label>
           <input id="first-name" type="text" formControlName="firstName">
 
@@ -60,8 +60,15 @@ export class DetailsComponent {
     this.housingLocation =
       this.housingService.getHousingLocationById(housingLocationId)
   }
+
+  submitApplication = () => {
+    this.applyForm.value.firstName ?? '',
+    this.applyForm.value.lastName ?? '',
+    this.applyForm.value.email ?? ''
+  }
 }
 
 // Learning Notes
 // Services can be used to interact with data (i.e. retrieve data from the data source)
 // Property binding is done with []. Event binding is done with ().
+// ?? is the "nullish coalescing operator" lol :)
