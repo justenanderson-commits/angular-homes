@@ -28,8 +28,17 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms'
       </section>  
       <section class="listing-apply">
         <h2 class="section-heading">Apply to live here</h2>
-      <form>
-          <button class="primary" type="button">Apply now</button>
+      <form [formGroup]="applyForm">
+          <label for="first-name">First Name</label>
+          <input id="first-name" type="text" formControlName="firstName">
+
+          <label for="last-name">Last Name</label>
+          <input id="last-name" type="text" formControlName="lastName">
+          
+          <label id="last-name">Email Address</label>
+          <input id="email" type="email" formControlName="email">
+
+          <button class="primary" type="submit">Apply now</button>
       </form>
       </section>
     </article>
