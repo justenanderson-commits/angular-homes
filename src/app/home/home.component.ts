@@ -4,6 +4,8 @@ import { HousingLocationComponent } from '../housing-location/housing-location.c
 import { HousingLocation } from '../housing-location'
 import { HousingService } from '../housing.service'
 
+// Continue https://www.youtube.com/watch?v=5K10oYJ5Y-E from 7:44
+
 @Component({
   selector: 'app-home',
   standalone: true,
