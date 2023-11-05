@@ -18,7 +18,7 @@ input[type="text"] {
   border-radius: 8px;
   margin-right: 4px;
   display: inline-block;
-  width: 30%;
+  width: 40%;
 }
 
 button {
@@ -29,7 +29,7 @@ button {
   border-radius: 8px;
 }
 
-@media (min-width: 500px) and (max-width: 768px) {
+@media (min-width: 300px) and (max-width: 768px) {
   .results {
       grid-template-columns: repeat(2, 1fr);
   }
