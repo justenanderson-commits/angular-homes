@@ -10,3 +10,8 @@ header {
 .content {
   padding: var(--content-padding);
 }
+
+.brand-logo {
+  width: 12rem;
+  margin-left: 2vw;
+}
