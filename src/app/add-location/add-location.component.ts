@@ -24,10 +24,11 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms'
   standalone: true,
   imports: [CommonModule, ReactiveFormsModule],
   template: `
-    <a href="/"><button>Return to Home Page</button></a>
-    <section>
-      <h2>Add a new housing location</h2>
+  <div class="add-location-page">
+    <a href="/">⬅ Back to Home Page</a>
+    <section class="form-section">
       <form>
+        <h1 class="section-heading">Add a new housing location</h1>
         <!-- The ID field needs to be generated and dynamically rendered. Then it can be passed in with the rest of the data when the form is submitted. -->
         <!-- <label></label>
         <input/> -->
@@ -47,13 +48,13 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms'
         <label for="availableUnits">Number of units available</label>
         <input id="name" type="text"/>
 
-        <p>Has wifi?</p>
+        <p class="section-heading">Has wifi?</p>
         <label for="wifi">Yes</label>
         <input id="wifi" name="wifi" type="radio" value="true"/>
         <label for="wifi">No</label>
         <input id="wifi" name="wifi" type="radio" value="false"/>
 
-        <p>Has on-site laundry?</p>
+        <p class="section-heading">Has on-site laundry?</p>
         <label for="laundry">Yes</label>
         <input id="laundry" name="laundry" type="radio" value="true"/>
         <label for="laundry">No</label>
@@ -62,6 +63,7 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms'
         <button type="submit" class="primary">Add location</button>
       </form>
     </section>
+</div>
   `,
   styleUrls: ['./add-location.component.css'],
 })
