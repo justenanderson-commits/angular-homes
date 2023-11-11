@@ -19,6 +19,7 @@ import { Component } from '@angular/core';
   `,
   styleUrls: ['./add-location.component.css']
 })
+
 export class AddLocationComponent {
 
 }
