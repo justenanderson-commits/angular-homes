@@ -55,7 +55,7 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms'
         <input id="wifi" name="wifi" type="radio" value="true"/>
         </div>
         <div class="radio-buttons">
-          <label for="wifi">No</label>
+          <label class="no-labels" for="wifi">No</label>
           <input id="wifi" name="wifi" type="radio" value="false"/>
         </div>
           
@@ -65,11 +65,11 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms'
           <input id="laundry" name="laundry" type="radio" value="true"/>
         </div>
         <div class="radio-buttons">
-          <label for="laundry">No</label>
+          <label class="no-labels" for="laundry">No</label>
           <input id="laundry" name="laundry" type="radio" value="false"/>
         </div>
           
-        <button type="submit" class="primary">Add location</button>
+        <button class="add-location-button" type="submit" class="primary">Add location</button>
       </form>
     </section>
 </div>

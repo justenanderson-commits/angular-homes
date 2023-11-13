@@ -1,3 +1,7 @@
+.add-location-button {
+  margin-top: 1vh;
+}
+
 .add-location-page {
   display: flex;
   flex-direction: column;
@@ -13,12 +17,17 @@
 .radio-buttons {
   display: flex;
   justify-content: space-between;
-  width: 15vw;
+  width: 7vw;
+  /* margin-bottom: 1vh; */
 }
 
 .section-heading {
   font-size: 16pt;
   margin-bottom: 15px;
+}
+
+.no-labels {
+  margin-right: .7vw;
 }
 
 label, input {
