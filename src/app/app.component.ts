@@ -7,7 +7,6 @@ import { RouterModule } from '@angular/router'
   selector: 'app-root',
   template: `
     <main>
-      <!-- Add an anchor tag to route back to home page here: -->
       <header class="brand-one">
         <a href="/">
           <img
@@ -17,7 +16,6 @@ import { RouterModule } from '@angular/router'
             area-hidden="true"
           />
         </a>
-        <!-- Add styling and conditionally render this link. It should disappear when the URL is /add-location -->
         <a href="/add-location">
           <button class="primary">Add New Location</button>
         </a>

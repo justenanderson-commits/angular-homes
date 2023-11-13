@@ -9,19 +9,19 @@ export class HousingService {
 
   constructor() {}
 
-  async getAllHousingLocations() : Promise<HousingLocation[]> {
+  async getAllHousingLocations(): Promise<HousingLocation[]> {
     const data = await fetch(this.url)
-    return await data.json() ?? []
+    return (await data.json()) ?? []
   }
 
-  async getHousingLocationById(id: Number) : Promise<HousingLocation | undefined> {
+  async getHousingLocationById(
+    id: Number
+  ): Promise<HousingLocation | undefined> {
     const data = await fetch(`${this.url}/${id}`)
-    return await data.json() ?? {}
+    return (await data.json()) ?? {}
   }
 
-  addHousingLocation() {
-    
-  }
+  addHousingLocation() {}
 
   submitApplication(firstName: string, lastName: string, email: string) {
     console.log('Form inputs: ', firstName, lastName, ' ', email)

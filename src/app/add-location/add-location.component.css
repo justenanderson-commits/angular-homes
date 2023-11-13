@@ -18,7 +18,6 @@
   display: flex;
   justify-content: space-between;
   width: 7vw;
-  /* margin-bottom: 1vh; */
 }
 
 .section-heading {
@@ -27,10 +26,11 @@
 }
 
 .no-labels {
-  margin-right: .6vw;
+  margin-right: 0.6vw;
 }
 
-label, input {
+label,
+input {
   display: block;
 }
 
@@ -48,7 +48,7 @@ input {
   border-top: none;
   border-right: none;
   border-left: none;
-  border-bottom: solid .3px;
+  border-bottom: solid 0.3px;
 }
 
 a {
