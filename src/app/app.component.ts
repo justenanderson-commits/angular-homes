@@ -9,17 +9,18 @@ import { RouterModule } from '@angular/router'
     <main>
       <!-- Add an anchor tag to route back to home page here: -->
       <header class="brand-one">
-        <img
-          class="brand-logo"
-          src="/assets/logo.svg"
-          alt="logo"
-          area-hidden="true"
-        />
-      <!-- Add styling and conditionally render this link. It should disappear when the URL is /add-location -->
+        <a href="/">
+          <img
+            class="brand-logo"
+            src="/assets/logo.svg"
+            alt="logo"
+            area-hidden="true"
+          />
+        </a>
+        <!-- Add styling and conditionally render this link. It should disappear when the URL is /add-location -->
         <a href="/add-location">
-          <button class="primary">Add New Location
-</button>
-          </a>
+          <button class="primary">Add New Location</button>
+        </a>
       </header>
       <section class="content">
         <router-outlet></router-outlet>
