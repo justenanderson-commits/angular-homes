@@ -1,0 +1,56 @@
+.add-location-button {
+  margin-top: 1vh;
+}
+
+.add-location-page {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+}
+
+.form-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.radio-buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 7vw;
+}
+
+.section-heading {
+  font-size: 16pt;
+  margin-bottom: 15px;
+}
+
+.no-labels {
+  margin-right: 0.6vw;
+}
+
+label,
+input {
+  display: block;
+}
+
+label {
+  color: var(--secondary-color);
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 12pt;
+}
+input {
+  font-size: 14pt;
+  margin-bottom: 12px;
+  padding: 10px;
+  width: 400px;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: solid 0.3px;
+}
+
+a {
+  text-decoration: none;
+}

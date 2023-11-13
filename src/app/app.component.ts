@@ -7,14 +7,18 @@ import { RouterModule } from '@angular/router'
   selector: 'app-root',
   template: `
     <main>
-      <!-- Add an anchor tag to route back to home page here: -->
       <header class="brand-one">
-        <img
-          class="brand-logo"
-          src="/assets/logo.svg"
-          alt="logo"
-          area-hidden="true"
-        />
+        <a href="/">
+          <img
+            class="brand-logo"
+            src="/assets/logo.svg"
+            alt="logo"
+            area-hidden="true"
+          />
+        </a>
+        <a href="/add-location">
+          <button class="primary">Add New Location</button>
+        </a>
       </header>
       <section class="content">
         <router-outlet></router-outlet>

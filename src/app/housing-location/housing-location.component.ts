@@ -18,16 +18,12 @@ import { RouterModule } from '@angular/router'
       <p class="listing-location">
         {{ housingLocation.city }}, {{ housingLocation.state }}
       </p>
-      <!-- Square brackets around the routerLink directive is for property binding and it means that the right-hand side value with support dynamic values and values other than strings. -->
       <a [routerLink]="['/details', housingLocation.id]">Learn More</a>
     </section>
   `,
   styleUrls: ['./housing-location.component.css'],
 })
 export class HousingLocationComponent {
-  // @Input() is an input decorator, which requires the @ symbol prefix and the parens at the end
-  // Decorators are functions that return functions
-  // The exclamation point is the non-null assertion operator. It tells tsc that the value won't be null or undefined
   @Input() housingLocation!: HousingLocation
 }
 

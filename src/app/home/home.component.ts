@@ -4,8 +4,6 @@ import { HousingLocationComponent } from '../housing-location/housing-location.c
 import { HousingLocation } from '../housing-location'
 import { HousingService } from '../housing.service'
 
-// Continue https://www.youtube.com/watch?v=5K10oYJ5Y-E from 7:44
-
 @Component({
   selector: 'app-home',
   standalone: true,
@@ -13,7 +11,12 @@ import { HousingService } from '../housing.service'
   template: `
     <section>
       <form>
-        <input type="text" placeholder="Filter by city" #filter (input)="filterResults(filter.value)"/>
+        <input
+          type="text"
+          placeholder="Filter by city"
+          #filter
+          (input)="filterResults(filter.value)"
+        />
       </form>
     </section>
     <section class="results">
@@ -32,16 +35,20 @@ export class HomeComponent {
   filteredLocationList: HousingLocation[] = []
 
   constructor() {
-    this.housingService.getAllHousingLocations().then((housingLocationList: HousingLocation[]) => {
-      this.housingLocationList = housingLocationList
-      this.filteredLocationList = housingLocationList
-    })
+    this.housingService
+      .getAllHousingLocations()
+      .then((housingLocationList: HousingLocation[]) => {
+        this.housingLocationList = housingLocationList
+        this.filteredLocationList = housingLocationList
+      })
   }
 
   filterResults(city: string) {
-    this.filteredLocationList = this.housingLocationList.filter(housinglocation => {
-      return housinglocation.city.toLowerCase().includes(city.toLowerCase())
-    })
+    this.filteredLocationList = this.housingLocationList.filter(
+      (housinglocation) => {
+        return housinglocation.city.toLowerCase().includes(city.toLowerCase())
+      }
+    )
   }
 }
 

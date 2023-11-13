@@ -58,9 +58,11 @@ export class DetailsComponent {
 
   constructor() {
     const housingLocationId = Number(this.route.snapshot.params['id'])
-    this.housingService.getHousingLocationById(housingLocationId).then(housingLocation => {
-      this.housingLocation = housingLocation
-    })
+    this.housingService
+      .getHousingLocationById(housingLocationId)
+      .then((housingLocation) => {
+        this.housingLocation = housingLocation
+      })
   }
 
   submitApplication = () => {
@@ -71,8 +73,3 @@ export class DetailsComponent {
     )
   }
 }
-
-// Learning Notes
-// Services can be used to interact with data (i.e. retrieve data from the data source)
-// Property binding is done with []. Event binding is done with ().
-// ?? is the "nullish coalescing operator" lol :)
