@@ -7,16 +7,17 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms'
 // Routing - done
 // Add link to return to the home page - done
 // Add button to header that links to the add location page - done
+// Add styling for AddLocationComponent - done
+// A button to submit the newly input data - done
 // Form module decorator import things
 // Find best way to assign an ID to the newly-added property:
-// ID = Add housingLocation.length + 1?
-// ID = date.now()?
-// A TS file that shows the shape of the data to be received
-// This may show an object like housing-location.ts, then programmatically add an ID to it.
-// Or can I just using housing-location.ts for this and have the ID assigned automatically somehow?
+  // ID = Add housingLocation.length + 1?
+  // ID = date.now()?
+// A TS file that shows the shape of the data to be received???
+  // This may show an object like housing-location.ts, then programmatically add an ID to it.
+  // Or can I just using housing-location.ts for this and have the ID assigned automatically somehow?
 // A service to interact with the data
 // Functions that will update the housing location array with the newly input data
-// A button to submit the newly input data
 // A confirmation message and/or a redirect to the details page on the newly added location
 
 @Component({
@@ -49,17 +50,25 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms'
         <input id="name" type="text"/>
 
         <p class="section-heading">Has wifi?</p>
+        <div class="radio-buttons">
         <label for="wifi">Yes</label>
         <input id="wifi" name="wifi" type="radio" value="true"/>
-        <label for="wifi">No</label>
-        <input id="wifi" name="wifi" type="radio" value="false"/>
-
+        </div>
+        <div class="radio-buttons">
+          <label for="wifi">No</label>
+          <input id="wifi" name="wifi" type="radio" value="false"/>
+        </div>
+          
         <p class="section-heading">Has on-site laundry?</p>
-        <label for="laundry">Yes</label>
-        <input id="laundry" name="laundry" type="radio" value="true"/>
-        <label for="laundry">No</label>
-        <input id="laundry" name="laundry" type="radio" value="false"/>
-       
+        <div class="radio-buttons">
+          <label for="laundry">Yes</label>
+          <input id="laundry" name="laundry" type="radio" value="true"/>
+        </div>
+        <div class="radio-buttons">
+          <label for="laundry">No</label>
+          <input id="laundry" name="laundry" type="radio" value="false"/>
+        </div>
+          
         <button type="submit" class="primary">Add location</button>
       </form>
     </section>

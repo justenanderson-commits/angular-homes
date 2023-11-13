@@ -10,6 +10,12 @@
   justify-content: center;
 }
 
+.radio-buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 15vw;
+}
+
 .section-heading {
   font-size: 16pt;
   margin-bottom: 15px;

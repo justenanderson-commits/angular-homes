@@ -19,6 +19,10 @@ export class HousingService {
     return await data.json() ?? {}
   }
 
+  addHousingLocation() {
+    
+  }
+
   submitApplication(firstName: string, lastName: string, email: string) {
     console.log('Form inputs: ', firstName, lastName, ' ', email)
   }
