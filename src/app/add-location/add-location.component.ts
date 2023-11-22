@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common'
 import { Component, inject } from '@angular/core'
 import { HousingLocation } from '../housing-location'
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms'
+import { HousingService } from '../housing.service'
 
 // This component will take input from the user to add a new housing location, which will require:
 // Find best way to assign an ID to the newly-added property:
@@ -22,7 +23,7 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms'
     <div class="add-location-page">
       <a href="/">⬅ Back to Home Page</a>
       <section class="form-section">
-        <form>
+        <form [formGroup]="addLocationForm" (submit)="addHousingLocation()">
           <h1 class="section-heading">Add a new housing location</h1>
           <!-- The ID field needs to be generated and dynamically rendered. Then it can be passed in with the rest of the data when the form is submitted. -->
           <!-- <label></label>
@@ -73,6 +74,7 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms'
   styleUrls: ['./add-location.component.css'],
 })
 export class AddLocationComponent {
+  housingService: HousingService = inject(HousingService)
   addLocationForm = new FormGroup({
     id: new FormControl(11),
     name: new FormControl(''),
@@ -83,4 +85,17 @@ export class AddLocationComponent {
     wifi: new FormControl(false),
     laundry: new FormControl(false),
   })
+
+  addHousingLocation = () => {
+    this.housingService.addHousingLocation(
+      this.addLocationForm.value.id ?? 0,
+      this.addLocationForm.value.name ?? '',
+      this.addLocationForm.value.city ?? '',
+      this.addLocationForm.value.state ?? '',
+      this.addLocationForm.value.photo ?? '',
+      this.addLocationForm.value.availableUnits ?? 0,
+      this.addLocationForm.value.wifi ?? false,
+      this.addLocationForm.value.laundry ?? false,
+    )
+  }
 }
