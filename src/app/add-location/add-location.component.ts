@@ -20,38 +20,38 @@ import { HousingService } from '../housing.service'
           <h1 class="section-heading">Add a new housing location</h1>
   
           <label for="name">Location Name</label>
-          <input id="name" type="text" formControlName="name"/>
+          <input id="name" type="text" formControlName="name" required/>
 
           <label for="city">City</label>
-          <input id="city" type="text" formControlName="city"/>
+          <input id="city" type="text" formControlName="city" required/>
 
           <label for="state">State</label>
-          <input id="state" type="text" formControlName="state" />
+          <input id="state" type="text" formControlName="state"  required/>
 
           <label for="photo">Image URL</label>
-          <input id="photo" type="text" formControlName="photo"/>
+          <input id="photo" type="text" formControlName="photo"  required/>
 
           <label for="availableUnits">Number of units available</label>
-          <input id="name" type="text" formControlName="availableUnits"/>
+          <input id="availableUnits" type="text" formControlName="availableUnits" required/>
 
           <p class="section-heading">Has wifi?</p>
           <div class="radio-buttons">
             <label for="wifi">Yes</label>
-            <input id="wifi" name="wifi" type="radio" value="true" formControlName="wifi"/>
+            <input id="wifi" name="wifi" type="radio" value="true" formControlName="wifi"  required/>
           </div>
           <div class="radio-buttons">
             <label class="no-labels" for="wifi">No</label>
-            <input id="wifi" name="wifi" type="radio" value="false" formControlName="wifi"/>
+            <input id="wifi" name="wifi" type="radio" value="false" formControlName="wifi" required/>
           </div>
 
           <p class="section-heading">Has on-site laundry?</p>
           <div class="radio-buttons">
             <label for="laundry">Yes</label>
-            <input id="laundry" name="laundry" type="radio" value="true" formControlName="laundry"/>
+            <input id="laundry" name="laundry" type="radio" value="true" formControlName="laundry" required/>
           </div>
           <div class="radio-buttons">
             <label class="no-labels" for="laundry">No</label>
-            <input id="laundry" name="laundry" type="radio" value="false" formControlName="laundry"/>
+            <input id="laundry" name="laundry" type="radio" value="false" formControlName="laundry" required/>
           </div>
 
           <button class="add-location-button" type="submit" class="primary">
