@@ -20,12 +20,12 @@ export class HousingService {
     const data = await fetch(`${this.url}/${id}`)
     return (await data.json()) ?? {}
   }
-
-  // It feels like this could be refactored to use type HousingLocation //
+// This function will need to be async once the POST is added to it //
+  // It feels like these params could be refactored to use type HousingLocation? //
   addHousingLocation(id: number, name: string, city: string, state: string,
     photo: string, availableUnits: number, wifi: boolean,laundry: boolean) {
-
-    console.log('Added location: ', 'id: ', id, 'name: ',name, 'city: ', city, ',', state, 'photo url: ', photo, 'number of units: ', availableUnits, 'wifi: ', wifi, 'laundry: ', laundry)
+  
+    console.log('Added location: ', 'id: ', id, 'name: ',name, 'city: ', city,',', state, 'photo url: ', photo, 'number of units: ', availableUnits, 'wifi: ', wifi, 'laundry: ', laundry)
   }
 
   submitApplication(firstName: string, lastName: string, email: string) {
