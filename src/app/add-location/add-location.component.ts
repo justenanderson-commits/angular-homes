@@ -30,38 +30,38 @@ import { HousingService } from '../housing.service'
         <input/> -->
 
           <label for="name">Location Name</label>
-          <input id="name" type="text" />
+          <input id="name" type="text" formControlName="name"/>
 
           <label for="city">City</label>
-          <input id="city" type="text" />
+          <input id="city" type="text" formControlName="city"/>
 
           <label for="state">State</label>
-          <input id="state" type="text" />
+          <input id="state" type="text" formControlName="state" />
 
           <label for="photo">Image URL</label>
-          <input id="photo" type="text" />
+          <input id="photo" type="text" formControlName="photo"/>
 
           <label for="availableUnits">Number of units available</label>
-          <input id="name" type="text" />
+          <input id="name" type="text" formControlName="availableUnits"/>
 
           <p class="section-heading">Has wifi?</p>
           <div class="radio-buttons">
             <label for="wifi">Yes</label>
-            <input id="wifi" name="wifi" type="radio" value="true" />
+            <input id="wifi" name="wifi" type="radio" value="true" formControlName="wifi"/>
           </div>
           <div class="radio-buttons">
             <label class="no-labels" for="wifi">No</label>
-            <input id="wifi" name="wifi" type="radio" value="false" />
+            <input id="wifi" name="wifi" type="radio" value="false" formControlName="wifi"/>
           </div>
 
           <p class="section-heading">Has on-site laundry?</p>
           <div class="radio-buttons">
             <label for="laundry">Yes</label>
-            <input id="laundry" name="laundry" type="radio" value="true" />
+            <input id="laundry" name="laundry" type="radio" value="true" formControlName="laundry"/>
           </div>
           <div class="radio-buttons">
             <label class="no-labels" for="laundry">No</label>
-            <input id="laundry" name="laundry" type="radio" value="false" />
+            <input id="laundry" name="laundry" type="radio" value="false" formControlName="laundry"/>
           </div>
 
           <button class="add-location-button" type="submit" class="primary">
@@ -85,6 +85,11 @@ export class AddLocationComponent {
     wifi: new FormControl(false),
     laundry: new FormControl(false),
   })
+
+  // constructor() {
+  //   this.housingService
+  //     .addHousingLocation
+  // }
 
   addHousingLocation = () => {
     this.housingService.addHousingLocation(

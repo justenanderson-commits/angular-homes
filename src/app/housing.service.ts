@@ -25,7 +25,7 @@ export class HousingService {
   addHousingLocation(id: number, name: string, city: string, state: string,
     photo: string, availableUnits: number, wifi: boolean,laundry: boolean) {
 
-    console.log('Added location: ', name, city, state, 'photo: ', photo, availableUnits, 'wifi: ', wifi, 'laundry: ', laundry)
+    console.log('Added location: ', 'id: ', id, 'name: ',name, 'city: ', city, ',', state, 'photo url: ', photo, 'number of units: ', availableUnits, 'wifi: ', wifi, 'laundry: ', laundry)
   }
 
   submitApplication(firstName: string, lastName: string, email: string) {
