@@ -21,7 +21,19 @@ export class HousingService {
     return (await data.json()) ?? {}
   }
 
-  addHousingLocation() {}
+  addHousingLocation(
+    // It feels like this could be refactored to use type HousingLocation //
+    id: number,
+    name: string,
+    city: string,
+    state: string,
+    photo: string,
+    availableUnits: number,
+    wifi: boolean,
+    laundry: boolean) {
+
+    console.log('Added location: ', name, city, state, 'photo: ', photo, availableUnits, 'wifi: ', wifi, 'laundry: ', laundry)
+  }
 
   submitApplication(firstName: string, lastName: string, email: string) {
     console.log('Form inputs: ', firstName, lastName, ' ', email)
