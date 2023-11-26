@@ -3,6 +3,7 @@ import { Component, inject } from '@angular/core'
 import { HousingLocation } from '../housing-location'
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms'
 import { HousingService } from '../housing.service'
+import { HttpClientModule } from '@angular/common/http'
 
 // This component will take input from the user to add a new housing location, which will require:
 // Functions that will update the housing location array with the newly input data
@@ -11,7 +12,7 @@ import { HousingService } from '../housing.service'
 @Component({
   selector: 'app-add-location',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, HttpClientModule],
   template: `
     <div class="add-location-page">
       <a href="/">⬅ Back to Home Page</a>
