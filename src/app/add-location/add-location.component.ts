@@ -65,6 +65,7 @@ import { HousingService } from '../housing.service'
 })
 export class AddLocationComponent {
   housingService: HousingService = inject(HousingService)
+  housingLocation: HousingLocation | undefined
   addLocationForm = new FormGroup({
     id: new FormControl(Date.now()),
     name: new FormControl(''),
