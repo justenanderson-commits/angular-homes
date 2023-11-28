@@ -3,7 +3,7 @@ import { Component, inject } from '@angular/core'
 import { HousingLocation } from '../housing-location'
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms'
 import { HousingService } from '../housing.service'
-import { HttpClientModule } from '@angular/common/http'
+
 
 // This component will take input from the user to add a new housing location, which will require:
 // Functions that will update the housing location array with the newly input data
@@ -12,7 +12,7 @@ import { HttpClientModule } from '@angular/common/http'
 @Component({
   selector: 'app-add-location',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, HttpClientModule],
+  imports: [CommonModule, ReactiveFormsModule],
   template: `
     <div class="add-location-page">
       <a href="/">⬅ Back to Home Page</a>
@@ -64,6 +64,7 @@ import { HttpClientModule } from '@angular/common/http'
   `,
   styleUrls: ['./add-location.component.css'],
 })
+
 export class AddLocationComponent {
   housingService: HousingService = inject(HousingService)
   housingLocation: HousingLocation | undefined
@@ -78,21 +79,18 @@ export class AddLocationComponent {
     laundry: new FormControl(false),
   })
 
-  // constructor() {
-  //   this.housingService
-  //     .addHousingLocation
-  // }
-
   addHousingLocation = () => {
-    this.housingService.addHousingLocation(
-      this.addLocationForm.value.id ?? 0,
-      this.addLocationForm.value.name ?? '',
-      this.addLocationForm.value.city ?? '',
-      this.addLocationForm.value.state ?? '',
-      this.addLocationForm.value.photo ?? '',
-      this.addLocationForm.value.availableUnits ?? 0,
-      this.addLocationForm.value.wifi ?? false,
-      this.addLocationForm.value.laundry ?? false,
-    )
+    const newLocation = {
+      id: this.addLocationForm.value.id ?? Date.now(),
+      name: this.addLocationForm.value.name ?? '',
+      city: this.addLocationForm.value.city ?? '',
+      state: this.addLocationForm.value.state ?? '',
+      photo: this.addLocationForm.value.photo ?? '',
+      availableUnits: this.addLocationForm.value.availableUnits ?? 0,
+      wifi: this.addLocationForm.value.wifi ?? false,
+      laundry: this.addLocationForm.value.laundry ?? false,
+    }
+
+    this.housingService.addHousingLocation(newLocation)
   }
 }

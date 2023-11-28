@@ -99,6 +99,66 @@
       "availableUnits": 6,
       "wifi": true,
       "laundry": true
+    },
+    {
+      "id": 1701206410889,
+      "name": "",
+      "city": "",
+      "state": "",
+      "photo": "",
+      "availableUnits": 1,
+      "wifi": false,
+      "laundry": false
+    },
+    {
+      "id": 1701206543508,
+      "name": "Justen Anderson",
+      "city": "Colorado Springs",
+      "state": "CO",
+      "photo": "",
+      "availableUnits": 1,
+      "wifi": "true",
+      "laundry": "true"
+    },
+    {
+      "id": 1701206598299,
+      "name": "Justen Anderson",
+      "city": "Colorado Springs",
+      "state": "CO",
+      "photo": "",
+      "availableUnits": 1,
+      "wifi": false,
+      "laundry": false
+    },
+    {
+      "id": 1701206678438,
+      "name": "Justen Anderson",
+      "city": "Colorado Springs",
+      "state": "CO",
+      "photo": "",
+      "availableUnits": 1,
+      "wifi": false,
+      "laundry": false
+    },
+    {
+      "id": 1701206855480,
+      "name": "Justen Anderson",
+      "city": "Colorado Springs",
+      "state": "CO",
+      "photo": "",
+      "availableUnits": 1,
+      "wifi": false,
+      "laundry": false
+    },
+    {
+      "id": 1701206891462,
+      "name": "Justen Anderson",
+      "city": "Colorado Springs",
+      "state": "CO",
+      "photo": "",
+      "availableUnits": 1,
+      "wifi": false,
+      "laundry": false
     }
   ]
 }

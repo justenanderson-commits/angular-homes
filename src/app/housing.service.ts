@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core'
 import { HousingLocation } from './housing-location'
+import { HttpClientModule } from '@angular/common/http'
 
 @Injectable({
   providedIn: 'root',
 })
 export class HousingService {
-  url = 'http://localhost:3000/locations'
+ url = 'http://localhost:3000/locations'
 
-  constructor() {}
+  constructor(private http: HttpClientModule) {}
 
   async getAllHousingLocations(): Promise<HousingLocation[]> {
     const data = await fetch(this.url)
@@ -20,12 +21,20 @@ export class HousingService {
     const data = await fetch(`${this.url}/${id}`)
     return (await data.json()) ?? {}
   }
-// This function will need to be async once the POST is added to it //
-  // It feels like these params could be refactored to use type HousingLocation? //
-  addHousingLocation(id: number, name: string, city: string, state: string,
-    photo: string, availableUnits: number, wifi: boolean,laundry: boolean) {
-  
-    console.log('Added location: ', 'id: ', id, 'name: ',name, 'city: ', city,',', state, 'photo url: ', photo, 'number of units: ', availableUnits, 'wifi: ', wifi, 'laundry: ', laundry)
+
+  async addHousingLocation(location: HousingLocation): Promise<HousingLocation | undefined>  {
+    const data = await fetch(`${this.url}`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(location) 
+    })
+
+    if(Response) {
+      console.log('It worked')
+    }
+    return
   }
 
   submitApplication(firstName: string, lastName: string, email: string) {
