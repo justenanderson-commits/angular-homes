@@ -6,7 +6,7 @@ import { HttpClientModule } from '@angular/common/http'
   providedIn: 'root',
 })
 export class HousingService {
- url = 'http://localhost:3000/locations'
+  url = 'http://localhost:3000/locations'
 
   constructor(private http: HttpClientModule) {}
 
@@ -22,19 +22,25 @@ export class HousingService {
     return (await data.json()) ?? {}
   }
 
-  async addHousingLocation(location: HousingLocation): Promise<HousingLocation | undefined>  {
-    const data = await fetch(`${this.url}`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(location) 
-    })
-
-    if(Response) {
-      console.log('It worked')
+  async addHousingLocation(
+    location: HousingLocation
+  ): Promise<HousingLocation | undefined> {
+    try {
+      const data = await fetch(`${this.url}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(location),
+      })
+      if (Response) {
+        console.log('It worked')
+      }
+      return
+    } catch (error) {
+      console.log('Error adding location: ', error)
+      return
     }
-    return
   }
 
   submitApplication(firstName: string, lastName: string, email: string) {
