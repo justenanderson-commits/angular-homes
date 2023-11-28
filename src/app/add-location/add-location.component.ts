@@ -6,7 +6,6 @@ import { HousingService } from '../housing.service'
 
 
 // This component will take input from the user to add a new housing location, which will require:
-// Functions that will update the housing location array with the newly input data
 // A confirmation message and/or a redirect to the details page on the newly added location
 
 @Component({

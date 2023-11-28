@@ -34,7 +34,7 @@ export class HousingService {
         body: JSON.stringify(location),
       })
       if (Response) {
-        console.log('It worked')
+        window.location.href = `http://localhost:4200/details/${location.id}`
       }
       return
     } catch (error) {
