@@ -4,10 +4,6 @@ import { HousingLocation } from '../housing-location'
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms'
 import { HousingService } from '../housing.service'
 
-
-// This component will take input from the user to add a new housing location, which will require:
-// A confirmation message and/or a redirect to the details page on the newly added location
-
 @Component({
   selector: 'app-add-location',
   standalone: true,
@@ -18,40 +14,73 @@ import { HousingService } from '../housing.service'
       <section class="form-section">
         <form [formGroup]="addLocationForm" (submit)="addHousingLocation()">
           <h1 class="section-heading">Add a new housing location</h1>
-  
+
           <label for="name">Location Name</label>
-          <input id="name" type="text" formControlName="name" required/>
+          <input id="name" type="text" formControlName="name" required />
 
           <label for="city">City</label>
-          <input id="city" type="text" formControlName="city" required/>
+          <input id="city" type="text" formControlName="city" required />
 
           <label for="state">State</label>
-          <input id="state" type="text" formControlName="state"  required/>
+          <input id="state" type="text" formControlName="state" required />
 
           <label for="photo">Image URL</label>
-          <input id="photo" type="text" formControlName="photo"  required/>
+          <input id="photo" type="text" formControlName="photo" required />
 
           <label for="availableUnits">Number of units available</label>
-          <input id="availableUnits" type="text" formControlName="availableUnits" required/>
+          <input
+            id="availableUnits"
+            type="text"
+            formControlName="availableUnits"
+            required
+          />
 
           <p class="section-heading">Has wifi?</p>
           <div class="radio-buttons">
             <label for="wifi">Yes</label>
-            <input id="wifi" name="wifi" type="radio" value="true" formControlName="wifi"  required/>
+            <input
+              id="wifi"
+              name="wifi"
+              type="radio"
+              value="true"
+              formControlName="wifi"
+              required
+            />
           </div>
           <div class="radio-buttons">
             <label class="no-labels" for="wifi">No</label>
-            <input id="wifi" name="wifi" type="radio" value="false" formControlName="wifi" required/>
+            <input
+              id="wifi"
+              name="wifi"
+              type="radio"
+              value="false"
+              formControlName="wifi"
+              required
+            />
           </div>
 
           <p class="section-heading">Has on-site laundry?</p>
           <div class="radio-buttons">
             <label for="laundry">Yes</label>
-            <input id="laundry" name="laundry" type="radio" value="true" formControlName="laundry" required/>
+            <input
+              id="laundry"
+              name="laundry"
+              type="radio"
+              value="true"
+              formControlName="laundry"
+              required
+            />
           </div>
           <div class="radio-buttons">
             <label class="no-labels" for="laundry">No</label>
-            <input id="laundry" name="laundry" type="radio" value="false" formControlName="laundry" required/>
+            <input
+              id="laundry"
+              name="laundry"
+              type="radio"
+              value="false"
+              formControlName="laundry"
+              required
+            />
           </div>
 
           <button class="add-location-button" type="submit" class="primary">
@@ -63,7 +92,6 @@ import { HousingService } from '../housing.service'
   `,
   styleUrls: ['./add-location.component.css'],
 })
-
 export class AddLocationComponent {
   housingService: HousingService = inject(HousingService)
   housingLocation: HousingLocation | undefined

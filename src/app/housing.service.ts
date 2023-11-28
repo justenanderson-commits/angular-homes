@@ -38,6 +38,7 @@ export class HousingService {
       }
       return
     } catch (error) {
+      // Add redirect to error page for unsuccessful post
       console.log('Error adding location: ', error)
       return
     }
