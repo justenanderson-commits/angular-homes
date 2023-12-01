@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core'
 import { HousingLocation } from './housing-location'
+import { HttpClientModule } from '@angular/common/http'
 
 @Injectable({
   providedIn: 'root',
@@ -7,7 +8,7 @@ import { HousingLocation } from './housing-location'
 export class HousingService {
   url = 'http://localhost:3000/locations'
 
-  constructor() {}
+  constructor(private http: HttpClientModule) {}
 
   async getAllHousingLocations(): Promise<HousingLocation[]> {
     const data = await fetch(this.url)
@@ -21,7 +22,27 @@ export class HousingService {
     return (await data.json()) ?? {}
   }
 
-  addHousingLocation() {}
+  async addHousingLocation(
+    location: HousingLocation
+  ): Promise<HousingLocation | undefined> {
+    try {
+      const data = await fetch(`${this.url}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(location),
+      })
+      if (Response) {
+        window.location.href = `http://localhost:4200/details/${location.id}`
+      }
+      return
+    } catch (error) {
+      // Add redirect to error page for unsuccessful post
+      console.log('Error adding location: ', error)
+      return
+    }
+  }
 
   submitApplication(firstName: string, lastName: string, email: string) {
     console.log('Form inputs: ', firstName, lastName, ' ', email)

@@ -99,6 +99,26 @@
       "availableUnits": 6,
       "wifi": true,
       "laundry": true
+    },
+    {
+      "id": 1701208820157,
+      "name": "Bayou Bliss",
+      "city": "Slidell",
+      "state": "LA",
+      "photo": "https://photos.zillowstatic.com/fp/413c81d4c872d0989a97428f3ea896f0-cc_ft_1536.webp",
+      "availableUnits": 1,
+      "wifi": "true",
+      "laundry": "true"
+    },
+    {
+      "id": 1701209000465,
+      "name": "Ara 33",
+      "city": "Los Delfines, Playa Tambor",
+      "state": "Puntarenas, Costa Rica",
+      "photo": "https://a0.muscache.com/im/pictures/1a20c853-5416-4941-9a0b-018e6e4727ec.jpg?im_w=1200",
+      "availableUnits": 1,
+      "wifi": "true",
+      "laundry": "true"
     }
   ]
 }

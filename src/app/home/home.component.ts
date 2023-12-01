@@ -51,6 +51,3 @@ export class HomeComponent {
     )
   }
 }
-
-// Learning Notes:
-// ngFor is Angular's syntax for iterating over the housingLocation array
